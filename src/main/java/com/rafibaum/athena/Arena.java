@@ -4,7 +4,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.WorldCreator;
-import org.bukkit.util.Vector;
 
 public class Arena {
 
@@ -28,7 +27,10 @@ public class Arena {
   public World init() {
     World world = Bukkit.createWorld(new WorldCreator(dirName));
     this.world = world;
+
     world.setAutoSave(false);
+    world.setStorm(false);
+
     return world;
   }
 
