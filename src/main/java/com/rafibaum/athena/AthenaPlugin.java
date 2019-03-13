@@ -39,6 +39,7 @@ public class AthenaPlugin extends JavaPlugin {
     pm.registerEvents(new SpectatorHandler(), this);
     pm.registerEvents(new IgniteEvent(), this);
     pm.registerEvents(new IgniteHandler(), this);
+    pm.registerEvents(new CreatureSpawnHandler(), this);
   }
 
   public static Location getJoinLocation() {
