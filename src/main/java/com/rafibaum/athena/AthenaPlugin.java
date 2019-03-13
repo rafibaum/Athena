@@ -12,18 +12,19 @@ import java.util.List;
 
 public class AthenaPlugin extends JavaPlugin {
 
-  private static Arena currentArena;
+  private static Match currentMatch;
   private static List<Player> spectators;
 
   @Override
   public void onDisable() {
-    currentArena.close();
+    currentMatch.close();
   }
 
   @Override
   public void onEnable() {
-    currentArena = new RaceForVictory3();
-    currentArena.init();
+    MapConfig rfv3 = new MapConfig("raceforvictory3",
+        new Position(44.5, 8, 0.5, -90.0f, 0.0f));
+    currentMatch = new Match(rfv3);
 
     spectators = new ArrayList<Player>();
 
@@ -42,7 +43,7 @@ public class AthenaPlugin extends JavaPlugin {
   }
 
   public static Location getJoinLocation() {
-    return currentArena.getSpawnLocation();
+    return currentMatch.getSpawnLocation();
   }
 
   public static void addSpectator(Player spectator) {
