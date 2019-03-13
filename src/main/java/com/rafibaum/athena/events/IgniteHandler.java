@@ -4,7 +4,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockIgniteEvent;
 
-public class IgniteEvent implements Listener {
+public class IgniteHandler implements Listener {
 
   @EventHandler
   public void onBurn(BlockIgniteEvent event) {
