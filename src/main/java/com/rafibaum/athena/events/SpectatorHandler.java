@@ -10,6 +10,8 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityTargetEvent;
 import org.bukkit.event.inventory.InventoryCreativeEvent;
+import org.bukkit.event.player.PlayerDropItemEvent;
+import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 
@@ -44,6 +46,13 @@ public class SpectatorHandler implements Listener {
   }
 
   @EventHandler
+  public void onPlayerAtEntityInteract(PlayerInteractAtEntityEvent event) {
+    if (AthenaPlugin.isSpectator(event.getPlayer())) {
+      event.setCancelled(true);
+    }
+  }
+
+  @EventHandler
   public void onEntityDamage(EntityDamageByEntityEvent event) {
     if (event.getDamager().getType() == EntityType.PLAYER) {
       Player player = (Player) event.getDamager();
@@ -70,6 +79,13 @@ public class SpectatorHandler implements Listener {
       if (AthenaPlugin.isSpectator(player)) {
         event.setCancelled(true);
       }
+    }
+  }
+
+  @EventHandler
+  public void onDropItem(PlayerDropItemEvent event) {
+    if (AthenaPlugin.isSpectator(event.getPlayer())) {
+      event.setCancelled(true);
     }
   }
 
