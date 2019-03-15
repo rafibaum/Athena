@@ -60,8 +60,8 @@ public class Athena extends JavaPlugin {
         }
       }
     }
-
     player.setCustomName(team.getColor() + ChatColor.stripColor(player.getDisplayName()));
+    player.setDisplayName(player.getCustomName());
     player.teleport(team.getSpawnLocation());
     if (team.getSpawnItems() != null) {
       player.getInventory().setContents(team.getSpawnItems().getContents());
