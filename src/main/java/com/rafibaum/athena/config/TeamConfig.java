@@ -1,21 +1,20 @@
 package com.rafibaum.athena.config;
 
 import com.rafibaum.athena.Position;
-import org.bukkit.Color;
+import org.bukkit.ChatColor;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.ItemStack;
 
 public class TeamConfig {
 
   private String name;
-  private Color color;
-  private Position spawnLocation;
+  private ChatColor color;
+  private Position spawnPosition;
   private Inventory spawnItems;
 
-  public TeamConfig(String name, Color color, Position spawnLocation, Inventory spawnItems) {
+  public TeamConfig(String name, ChatColor color, Position spawnPosition, Inventory spawnItems) {
     this.name = name;
     this.color = color;
-    this.spawnLocation = spawnLocation;
+    this.spawnPosition = spawnPosition;
     this.spawnItems = spawnItems;
   }
 
@@ -31,20 +30,20 @@ public class TeamConfig {
     this.name = name;
   }
 
-  public Color getColor() {
+  public ChatColor getColor() {
     return color;
   }
 
-  public void setColor(Color color) {
+  public void setColor(ChatColor color) {
     this.color = color;
   }
 
-  public Position getSpawnLocation() {
-    return spawnLocation;
+  public Position getSpawnPosition() {
+    return spawnPosition;
   }
 
-  public void setSpawnLocation(Position spawnLocation) {
-    this.spawnLocation = spawnLocation;
+  public void setSpawnPosition(Position spawnPosition) {
+    this.spawnPosition = spawnPosition;
   }
 
   public Inventory getSpawnItems() {

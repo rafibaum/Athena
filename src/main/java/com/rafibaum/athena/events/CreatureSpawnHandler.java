@@ -7,11 +7,9 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 public class CreatureSpawnHandler implements Listener {
 
   @EventHandler
-  public void onSpawn(CreatureSpawnEvent event) {
-    if (event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.NATURAL ||
-        event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.BUILD_IRONGOLEM ||
-        event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.BUILD_SNOWMAN ||
-        event.getSpawnReason() == CreatureSpawnEvent.SpawnReason.BUILD_WITHER) {
+  public void onCreatureSpawn(CreatureSpawnEvent event) {
+    CreatureSpawnEvent.SpawnReason reason = event.getSpawnReason();
+    if (reason != CreatureSpawnEvent.SpawnReason.EGG) {
       event.setCancelled(true);
     }
   }

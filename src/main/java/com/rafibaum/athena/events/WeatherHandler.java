@@ -10,5 +10,4 @@ public class WeatherHandler implements Listener {
   public void onWeatherChange(WeatherChangeEvent event) {
     event.setCancelled(event.toWeatherState());
   }
-
 }

@@ -2,23 +2,24 @@ package com.rafibaum.athena.config;
 
 import com.rafibaum.athena.Position;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class MapConfig {
 
   private String dirName;
-  private Position spawnLocation;
+  private Position spawnPosition;
   private List<TeamConfig> teams;
 
-  public MapConfig(String dirName, Position spawnLocation, TeamConfig[] teams) {
+  public MapConfig(String dirName, Position spawnPosition, TeamConfig[] teams) {
     this.dirName = dirName;
-    this.spawnLocation = spawnLocation;
+    this.spawnPosition = spawnPosition;
     this.teams = Arrays.asList(teams);
   }
 
   public MapConfig() {
-
+    this.teams = new ArrayList<>();
   }
 
   public String getDirName() {
@@ -29,12 +30,12 @@ public class MapConfig {
     this.dirName = dirName;
   }
 
-  public Position getSpawnLocation() {
-    return spawnLocation;
+  public Position getSpawnPosition() {
+    return spawnPosition;
   }
 
-  public void setSpawnLocation(Position spawnLocation) {
-    this.spawnLocation = spawnLocation;
+  public void setSpawnPosition(Position spawnLocation) {
+    this.spawnPosition = spawnLocation;
   }
 
   public List<TeamConfig> getTeams() {

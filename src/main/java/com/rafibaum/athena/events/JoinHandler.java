@@ -1,7 +1,6 @@
 package com.rafibaum.athena.events;
 
-import com.rafibaum.athena.AthenaPlugin;
-import org.bukkit.GameMode;
+import com.rafibaum.athena.Athena;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -9,10 +8,8 @@ import org.bukkit.event.player.PlayerJoinEvent;
 public class JoinHandler implements Listener {
 
   @EventHandler
-  public void onPlayerJoin(PlayerJoinEvent event) {
-    event.getPlayer().setGameMode(GameMode.CREATIVE);
-    AthenaPlugin.addSpectator(event.getPlayer());
-    event.getPlayer().teleport(AthenaPlugin.getJoinLocation());
+  public void onJoin(PlayerJoinEvent event) {
+    Athena.addSpectator(event.getPlayer());
   }
 
 }
